@@ -7,6 +7,10 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Tangerine">
+	      	<style>
+    		{ padding: 0; margin: 0; }
+    		canvas { background: #eee; display: block; margin: 0 auto; }
+    	</style>
   </head>
   <body>
     <div class="div1">
@@ -74,6 +78,105 @@
       </ul>
     </div>
     <img width="337" height="294" src="file:///C:/Users/HP/Pictures/GengarPaint.png" alt="Gengar">
+	      		<canvas id="myCanvas" width="480" height="320"></canvas>
+		<script>
+			score = 0;
+			window.alert("Your score is " + score);
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			x = 20;
+			y = 130;
+			x1 = 0;
+			y1 = 0;
+			a = Math.floor(Math.random() * 480);
+			b = Math.floor(Math.random() * 320);
+			function draw()
+			{
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.beginPath();
+				ctx.rect(x, y, 20, 50)
+				ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
+				ctx.stroke();
+				ctx.closePath();
+				ctx.beginPath();
+				ctx.rect(a, b, 20, 50)
+				ctx.strokeStyle = "rgba(0, 255, 0, 0.5)";
+				ctx.stroke();
+				ctx.closePath();
+				x+=x1;
+				y+=y1;
+				if (x==a && y==b)
+				{
+					newRandRect();
+				}
+			}
+			function newRandRect()
+			{
+				a = Math.floor(Math.random() * 480);
+				b = Math.floor(Math.random() * 320);
+			}
+			function left()
+			{
+				if (x1==0)
+					x1=-1;
+				else
+					x1=0
+			}
+			function left1()
+			{
+				x-=1;
+			}
+			function right()
+			{
+				if (x1==0)
+					x1=1;
+				else
+					x1=0;
+			}
+			function right1()
+			{
+				x+=1;
+			}
+			function up()
+			{
+				if (y1==0)
+					y1=-1;
+				else
+					y1=0;
+			}
+			function up1()
+			{
+				y-=1;
+			}
+			function down()
+			{
+				if (y1==0)
+					y1=1;
+				else
+					y1=0;
+			}
+			function down1()
+			{
+				y+=1;
+			}
+			function reset()
+			{
+				x1 = 0;
+				x2 = 0;
+				a = Math.floor(Math.random() * 480);
+				b = Math.floor(Math.random() * 320);	
+			}
+			setInterval(draw, 10);
+		</script>
     <script src="script.js"></script>
+	      	<button onclick="up()">UP</button>
+	<button onclick="down()">DOWN</button>
+	<button onclick="left()">LEFT</button>
+	<button onclick="right()">RIGHT</button>
+	<button onclick="reset()">NEW</button>
+	<button onclick="up1()">UP 1</button>
+	<button onclick="down1()">DOWN 1</button>
+	<button onclick="left1()">LEFT 1</button>
+	<button onclick="right1()">RIGHT 1</button>
   </body>
 </html>
