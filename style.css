@@ -1,31 +1,24 @@
 body
 {
-  background-image: linear-gradient(to right, red, yellow);
+	background-image: linear-gradient(to right, red, yellow);
 }
 h1
 {
-  color: aqua;
-}
-div.div3
-{
-  font-family: OpenSans;
-  font-size: 30px;
+	color: aqua;
 }
 a:link 
 {
-  color: green;
+	color: green;
 }
 a:visited 
 {
-  color: green;
+	color: green;
 }
 a:hover 
 {
-  color: darkviolet;
+	color: darkviolet;
 }
 a:active 
 {
-  color: blue;
+	color: blue;
 }
-
-
